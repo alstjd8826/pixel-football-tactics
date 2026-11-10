@@ -1,0 +1,250 @@
+{
+  "_doc": "AI 감독 7명 (모두 가상 인물). pref=주/부 포메이션과 주 스타일, tweak=주 스타일일 때 덮어쓰는 지시, roles/oop=위치별 선호 역할, read=경기 읽기(상대 분석 반영 정도), attr=감독 능력치(0~1).",
+  "managers": [
+    {
+      "name": "롱볼 레인저스",
+      "tag": "RNG",
+      "shirt": "#3e8bff",
+      "shorts": "#1c2a55",
+      "sock": "#f2f2f2",
+      "r": 78,
+      "mgr": "박정훈",
+      "pref": {
+        "form": "4-4-2",
+        "style": "direct",
+        "sub": "5-3-2"
+      },
+      "desc": "두 줄 수비 뒤에서 투톱에게 곧바로 길게 넣는다. 타깃맨과 세컨드 볼 경합이 무기.",
+      "tweak": {
+        "crossHigh": 0.9,
+        "gkLong": 1,
+        "line": 0.42,
+        "crossEarly": 0.9,
+        "stepUp": 0.3
+      },
+      "roles": {
+        "ST": "target"
+      },
+      "read": 0.62,
+      "attr": {
+        "def": 0.72,
+        "disc": 0.75,
+        "det": 0.8
+      }
+    },
+    {
+      "name": "패스 마에스트로",
+      "tag": "PAS",
+      "shirt": "#7cc7ff",
+      "shorts": "#f2f2f2",
+      "sock": "#7cc7ff",
+      "r": 78,
+      "mgr": "서도윤",
+      "pref": {
+        "form": "4-3-3",
+        "style": "possession",
+        "sub": "4-2-3-1"
+      },
+      "desc": "세 미드필더가 짧은 패스로 점유하고, 인버티드 풀백으로 중원 수를 늘린다.",
+      "tweak": {
+        "buildDirect": 0.05,
+        "patience": 0.9,
+        "overlap": 0.35,
+        "underlap": 0.75,
+        "dribbleFinal": 0.4
+      },
+      "roles": {
+        "LB": "invFb",
+        "RB": "invFb",
+        "DM": "regista",
+        "CM": "mezzala",
+        "CB": "bpd",
+        "GK": "bpGK"
+      },
+      "read": 0.88,
+      "attr": {
+        "tacK": 0.9,
+        "att": 0.78,
+        "adapt": 0.6
+      }
+    },
+    {
+      "name": "카운터 블리츠",
+      "tag": "CTR",
+      "shirt": "#ff8a2a",
+      "shorts": "#1d1d1d",
+      "sock": "#ff8a2a",
+      "r": 78,
+      "mgr": "윤태성",
+      "pref": {
+        "form": "4-2-3-1",
+        "style": "counter",
+        "sub": "4-4-2"
+      },
+      "desc": "더블 볼란치로 내려앉았다가 공을 뺏는 순간 2선과 원톱이 뒷공간으로 달린다.",
+      "tweak": {
+        "atkTrans": 1,
+        "runBehind": 0.95,
+        "spacePass": 0.95,
+        "defTrans": 0.15,
+        "dribbleFinal": 0.7,
+        "markTight": 0.35
+      },
+      "roles": {
+        "ST": "advFwd",
+        "DM": "bwm",
+        "AM": "shadow",
+        "LW": "raumdeuter",
+        "RW": "insideFwd"
+      },
+      "read": 0.75,
+      "attr": {
+        "tacK": 0.75,
+        "def": 0.7,
+        "fit": 0.75
+      }
+    },
+    {
+      "name": "윙백 크루",
+      "tag": "WBC",
+      "shirt": "#7a3fd6",
+      "shorts": "#f2f2f2",
+      "sock": "#7a3fd6",
+      "r": 78,
+      "mgr": "강민준",
+      "pref": {
+        "form": "3-5-2",
+        "style": "wing",
+        "sub": "3-4-3"
+      },
+      "desc": "윙백 두 명이 측면을 끝까지 오르내리며 크로스를 퍼붓고, 투톱이 박스를 채운다.",
+      "tweak": {
+        "overlap": 1,
+        "cross": 0.95,
+        "width": 0.95,
+        "underlap": 0,
+        "overlapSide": 0.5,
+        "crossEarly": 0.7
+      },
+      "roles": {
+        "LWB": "fbAtk",
+        "RWB": "fbAtk",
+        "LM": "winger",
+        "RM": "winger",
+        "ST": "target"
+      },
+      "read": 0.7,
+      "attr": {
+        "att": 0.75,
+        "fit": 0.8,
+        "mot": 0.75
+      }
+    },
+    {
+      "name": "프레스 머신",
+      "tag": "PRS",
+      "shirt": "#f5c84c",
+      "shorts": "#1d1d1d",
+      "sock": "#f5c84c",
+      "r": 78,
+      "mgr": "이하람",
+      "pref": {
+        "form": "3-4-3",
+        "style": "gegen",
+        "sub": "4-3-3"
+      },
+      "desc": "높은 라인에서 셋이 함께 압박하고, 뺏기면 그 자리에서 바로 다시 압박한다.",
+      "tweak": {
+        "engage": 1,
+        "press": 1,
+        "defTrans": 1,
+        "gkPress": 1,
+        "trap": 0.75,
+        "markTight": 0.85,
+        "stepUp": 0.85
+      },
+      "roles": {
+        "ST": "pressFwd",
+        "CM": "b2b",
+        "GK": "sweeperGK",
+        "LM": "completeWB",
+        "RM": "completeWB"
+      },
+      "oop": "presser",
+      "read": 0.8,
+      "attr": {
+        "fit": 0.9,
+        "mot": 0.85,
+        "det": 0.85
+      }
+    },
+    {
+      "name": "철벽 FC",
+      "tag": "WAL",
+      "shirt": "#2a2a2a",
+      "shorts": "#2a2a2a",
+      "sock": "#e5484d",
+      "r": 78,
+      "mgr": "최석진",
+      "pref": {
+        "form": "5-3-2",
+        "style": "lowblock",
+        "sub": "3-5-2"
+      },
+      "desc": "다섯 수비수와 세 미드필더가 박스 앞을 잠그고, 시간을 끌며 한 방을 노린다.",
+      "tweak": {
+        "engage": 0.05,
+        "line": 0.08,
+        "crossCont": 1,
+        "waste": 0.8,
+        "stepUp": 0.05,
+        "markTight": 0.65
+      },
+      "roles": {
+        "CB": "noNonsense"
+      },
+      "oop": "cover",
+      "read": 0.72,
+      "attr": {
+        "def": 0.9,
+        "disc": 0.85,
+        "adapt": 0.4
+      }
+    },
+    {
+      "name": "앵커 시티",
+      "tag": "ANC",
+      "shirt": "#138a8a",
+      "shorts": "#f2f2f2",
+      "sock": "#138a8a",
+      "r": 78,
+      "mgr": "문재오",
+      "pref": {
+        "form": "4-1-4-1",
+        "style": "possession",
+        "sub": "4-3-3"
+      },
+      "desc": "앵커 한 명이 중앙을 지키는 중간 블록. 점유는 하되 서두르지 않고 균형을 지킨다.",
+      "tweak": {
+        "engage": 0.45,
+        "line": 0.45,
+        "tempo": 0.3,
+        "risk": 0.2,
+        "defTrans": 0.4,
+        "gkWide": 0.3,
+        "underlap": 0.5
+      },
+      "roles": {
+        "DM": "anchor",
+        "CM": "carrilero",
+        "ST": "complete"
+      },
+      "read": 0.82,
+      "attr": {
+        "tacK": 0.82,
+        "def": 0.78,
+        "man": 0.8
+      }
+    }
+  ]
+}

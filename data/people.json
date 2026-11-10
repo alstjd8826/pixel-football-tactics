@@ -1,0 +1,292 @@
+{
+  "_doc": "사람(선수·코치진·심판)이 가진 연속 속성 정의. 값은 모두 0~1 (선수 특성만 -1~+1).",
+  "ruleUnderstanding": [
+    {
+      "key": "off",
+      "name": "오프사이드"
+    },
+    {
+      "key": "foul",
+      "name": "반칙·징계"
+    },
+    {
+      "key": "hand",
+      "name": "핸드볼"
+    },
+    {
+      "key": "gk",
+      "name": "골키퍼 규칙"
+    },
+    {
+      "key": "restart",
+      "name": "재개·시간"
+    },
+    {
+      "key": "pk",
+      "name": "페널티킥"
+    },
+    {
+      "key": "sub",
+      "name": "교체·부상"
+    },
+    {
+      "key": "sim",
+      "name": "시뮬레이션"
+    },
+    {
+      "key": "staff",
+      "name": "임원·기술 지역"
+    }
+  ],
+  "tacticalUnderstanding": [
+    {
+      "key": "pos",
+      "name": "포지셔닝"
+    },
+    {
+      "key": "press",
+      "name": "압박"
+    },
+    {
+      "key": "build",
+      "name": "빌드업"
+    },
+    {
+      "key": "trans",
+      "name": "공수 전환"
+    },
+    {
+      "key": "line",
+      "name": "라인 조율"
+    },
+    {
+      "key": "width",
+      "name": "측면 활용"
+    },
+    {
+      "key": "read",
+      "name": "경기 읽기"
+    }
+  ],
+  "technical": [
+    {
+      "key": "pace",
+      "name": "속도"
+    },
+    {
+      "key": "stam",
+      "name": "체력"
+    },
+    {
+      "key": "pass",
+      "name": "패스"
+    },
+    {
+      "key": "shoot",
+      "name": "슈팅"
+    },
+    {
+      "key": "drib",
+      "name": "드리블"
+    },
+    {
+      "key": "ctrl",
+      "name": "볼 컨트롤"
+    },
+    {
+      "key": "tack",
+      "name": "태클"
+    },
+    {
+      "key": "cross",
+      "name": "크로스"
+    },
+    {
+      "key": "head",
+      "name": "헤더"
+    },
+    {
+      "key": "refl",
+      "name": "반사신경"
+    },
+    {
+      "key": "hand",
+      "name": "캐칭"
+    },
+    {
+      "key": "kick",
+      "name": "킥 배급"
+    }
+  ],
+  "staffAttributes": [
+    {
+      "key": "att",
+      "name": "공격 지도"
+    },
+    {
+      "key": "def",
+      "name": "수비 지도"
+    },
+    {
+      "key": "fit",
+      "name": "체력 지도"
+    },
+    {
+      "key": "gkc",
+      "name": "GK 지도"
+    },
+    {
+      "key": "tacK",
+      "name": "전술 지식"
+    },
+    {
+      "key": "mot",
+      "name": "동기 부여"
+    },
+    {
+      "key": "man",
+      "name": "선수 관리"
+    },
+    {
+      "key": "disc",
+      "name": "규율"
+    },
+    {
+      "key": "adapt",
+      "name": "적응력"
+    },
+    {
+      "key": "det",
+      "name": "결단력"
+    },
+    {
+      "key": "judge",
+      "name": "선수 판단"
+    },
+    {
+      "key": "med",
+      "name": "의료"
+    }
+  ],
+  "staffRoleBias": {
+    "mgr": {
+      "tacK": 0.1,
+      "mot": 0.08,
+      "man": 0.08,
+      "judge": 0.05,
+      "med": -0.35,
+      "gkc": -0.15
+    },
+    "ast": {
+      "att": 0.06,
+      "def": 0.06,
+      "tacK": 0.05,
+      "med": -0.35
+    },
+    "coach": {
+      "att": 0.1,
+      "def": 0.1,
+      "fit": 0.05,
+      "med": -0.35,
+      "judge": -0.05
+    },
+    "gkc": {
+      "gkc": 0.25,
+      "att": -0.15,
+      "def": -0.05,
+      "med": -0.3
+    },
+    "physio": {
+      "med": 0.25,
+      "fit": 0.15,
+      "att": -0.3,
+      "def": -0.3,
+      "tacK": -0.3,
+      "gkc": -0.3
+    },
+    "doctor": {
+      "med": 0.3,
+      "fit": 0.05,
+      "att": -0.35,
+      "def": -0.35,
+      "tacK": -0.35,
+      "gkc": -0.35
+    }
+  },
+  "staffRoles": [
+    {
+      "name": "감독",
+      "key": "mgr"
+    },
+    {
+      "name": "수석코치",
+      "key": "ast"
+    },
+    {
+      "name": "코치",
+      "key": "coach"
+    },
+    {
+      "name": "GK 코치",
+      "key": "gkc"
+    },
+    {
+      "name": "피지오",
+      "key": "physio"
+    },
+    {
+      "name": "팀 닥터",
+      "key": "doctor"
+    }
+  ],
+  "playerTraits": {
+    "range": "-1(싫어함) ~ 0(중립) ~ +1(좋아함). 현재 게임은 전원 0",
+    "items": [
+      {
+        "key": "dribble",
+        "name": "드리블",
+        "desc": "공을 끌고 가며 직접 돌파하려 함"
+      },
+      {
+        "key": "longShot",
+        "name": "중거리 슛",
+        "desc": "박스 밖에서도 슈팅을 노림"
+      },
+      {
+        "key": "throughBall",
+        "name": "킬패스",
+        "desc": "수비 뒷공간으로 찔러 주는 패스를 노림"
+      },
+      {
+        "key": "shortPass",
+        "name": "짧은 패스",
+        "desc": "먼 패스보다 가까운 동료와 주고받음"
+      },
+      {
+        "key": "runBehind",
+        "name": "뒷공간 침투",
+        "desc": "수비 라인 뒤로 뛰어드는 걸 즐김"
+      },
+      {
+        "key": "cross",
+        "name": "크로스",
+        "desc": "측면에서 크로스를 올리려 함"
+      },
+      {
+        "key": "tackle",
+        "name": "태클",
+        "desc": "몸을 날려 공을 뺏으려 함 (반칙 위험도 함께 오름)"
+      },
+      {
+        "key": "dive",
+        "name": "넘어지기",
+        "desc": "접촉이 있으면 쉽게 넘어짐"
+      },
+      {
+        "key": "argue",
+        "name": "판정 항의",
+        "desc": "판정에 자주 항의함"
+      }
+    ]
+  }
+}

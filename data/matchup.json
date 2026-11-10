@@ -1,0 +1,49 @@
+{
+  "_doc": "전술 상성 항목. 각 항목은 (A 기준 값 - B 기준 값). 합계가 + 면 A 유리. 공식은 docs/formulas.md",
+  "components": {
+    "trans": {
+      "label": "전환 (역습 vs 대형 복귀 지연)",
+      "short": "공수 전환"
+    },
+    "terr": {
+      "label": "점유·진영 장악 (라인·압박 × 기술)",
+      "short": "점유·진영 장악"
+    },
+    "mid": {
+      "label": "중원 수적 우위",
+      "short": "중원 숫자"
+    },
+    "wide": {
+      "label": "측면 (윙어 vs 윙백·풀백)",
+      "short": "측면 대결"
+    },
+    "front": {
+      "label": "전방 인원 vs 센터백",
+      "short": "공격수 대 센터백"
+    },
+    "press": {
+      "label": "압박 vs 빌드업 기술",
+      "short": "압박 대 빌드업"
+    },
+    "space": {
+      "label": "뒷공간 (속도·직선성 vs 라인 높이)",
+      "short": "라인 뒤 공간"
+    },
+    "thru": {
+      "label": "공간 패스 vs 높은 라인",
+      "short": "공간 패스 대 높은 라인"
+    },
+    "block": {
+      "label": "밀집 수비 vs 좁은 공격",
+      "short": "밀집 수비 대 공격 폭"
+    },
+    "bypass": {
+      "label": "롱볼로 압박 우회",
+      "short": "롱볼로 압박 우회"
+    },
+    "exec": {
+      "label": "전술 실행력",
+      "short": "전술 이해·실행"
+    }
+  }
+}

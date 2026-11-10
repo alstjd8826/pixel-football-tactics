@@ -1,0 +1,247 @@
+{
+  "_doc": "팀 지시. 모든 값은 0~1 연속값. scale 은 0 ↔ 1 의 의미. FM26 지시 체계를 연속값으로 옮김.",
+  "groups": [
+    {
+      "id": "ip",
+      "name": "공격 시 — 공통"
+    },
+    {
+      "id": "build",
+      "name": "공격 시 — 빌드업"
+    },
+    {
+      "id": "prog",
+      "name": "공격 시 — 전개"
+    },
+    {
+      "id": "final",
+      "name": "공격 시 — 마무리"
+    },
+    {
+      "id": "trans",
+      "name": "전환"
+    },
+    {
+      "id": "oop",
+      "name": "수비 시"
+    }
+  ],
+  "instructions": [
+    {
+      "key": "direct",
+      "name": "패스 직선성",
+      "group": "ip",
+      "scale": "짧게 ↔ 길고 직선적으로"
+    },
+    {
+      "key": "tempo",
+      "name": "템포",
+      "group": "ip",
+      "scale": "느리게 ↔ 빠르게"
+    },
+    {
+      "key": "width",
+      "name": "공격 폭",
+      "group": "ip",
+      "scale": "좁게 ↔ 넓게"
+    },
+    {
+      "key": "risk",
+      "name": "패스 위험 감수",
+      "group": "ip",
+      "scale": "안전하게 ↔ 막힌 길도 시도"
+    },
+    {
+      "key": "waste",
+      "name": "시간 끌기",
+      "group": "ip",
+      "scale": "안 함 ↔ 자주"
+    },
+    {
+      "key": "freedom",
+      "name": "창의적 자유도",
+      "group": "ip",
+      "scale": "지시대로 ↔ 자유롭게"
+    },
+    {
+      "key": "setPiece",
+      "name": "세트피스 노리기",
+      "group": "ip",
+      "scale": "공을 살림 ↔ 코너·프리킥 유도"
+    },
+    {
+      "key": "buildDirect",
+      "name": "빌드업 방식",
+      "group": "build",
+      "scale": "압박을 뚫고 짧게 ↔ 바로 전방으로"
+    },
+    {
+      "key": "gkLong",
+      "name": "골킥·GK 배급 거리",
+      "group": "build",
+      "scale": "가까운 센터백 ↔ 최전방"
+    },
+    {
+      "key": "gkSpeed",
+      "name": "GK 배급 속도",
+      "group": "build",
+      "scale": "천천히 ↔ 빠르게"
+    },
+    {
+      "key": "gkWide",
+      "name": "GK 배급 방향",
+      "group": "build",
+      "scale": "중앙(센터백·미드필더) ↔ 측면(풀백)"
+    },
+    {
+      "key": "runBehind",
+      "name": "패스 받는 방식",
+      "group": "prog",
+      "scale": "발밑으로 ↔ 뒷공간으로"
+    },
+    {
+      "key": "spacePass",
+      "name": "공간 패스",
+      "group": "prog",
+      "scale": "발밑에 정확히 ↔ 달려갈 공간으로 찔러 줌"
+    },
+    {
+      "key": "dribble",
+      "name": "전개 지역 드리블",
+      "group": "prog",
+      "scale": "줄임 ↔ 장려"
+    },
+    {
+      "key": "overlap",
+      "name": "풀백 지원 침투",
+      "group": "prog",
+      "scale": "자리 지킴 ↔ 적극 침투"
+    },
+    {
+      "key": "overlapSide",
+      "name": "지원 침투 측면",
+      "group": "prog",
+      "scale": "왼쪽 풀백 위주 ↔ 양쪽 ↔ 오른쪽 풀백 위주"
+    },
+    {
+      "key": "underlap",
+      "name": "풀백 침투 방식",
+      "group": "prog",
+      "scale": "바깥 오버랩 ↔ 안쪽 언더랩"
+    },
+    {
+      "key": "side",
+      "name": "전개 방향",
+      "group": "prog",
+      "scale": "왼쪽 ↔ 오른쪽"
+    },
+    {
+      "key": "patience",
+      "name": "인내심",
+      "group": "final",
+      "scale": "바로 처리 ↔ 박스 안까지 끌고 감"
+    },
+    {
+      "key": "dribbleFinal",
+      "name": "마무리 지역 드리블",
+      "group": "final",
+      "scale": "줄임 ↔ 장려"
+    },
+    {
+      "key": "crossEarly",
+      "name": "크로스 타이밍",
+      "group": "final",
+      "scale": "끝까지 몰고 감 ↔ 일찍 올림"
+    },
+    {
+      "key": "longShot",
+      "name": "중거리 슛",
+      "group": "final",
+      "scale": "줄임 ↔ 장려"
+    },
+    {
+      "key": "cross",
+      "name": "크로스 빈도",
+      "group": "final",
+      "scale": "적게 ↔ 많이"
+    },
+    {
+      "key": "crossHigh",
+      "name": "크로스 높이",
+      "group": "final",
+      "scale": "낮고 빠르게 ↔ 높게"
+    },
+    {
+      "key": "atkTrans",
+      "name": "공 뺏은 직후",
+      "group": "trans",
+      "scale": "차분한 빌드업 ↔ 즉시 역습"
+    },
+    {
+      "key": "defTrans",
+      "name": "공 뺏긴 직후",
+      "group": "trans",
+      "scale": "대형 복귀 ↔ 즉시 재압박"
+    },
+    {
+      "key": "engage",
+      "name": "압박 시작선",
+      "group": "oop",
+      "scale": "로우 블록 ↔ 높은 압박"
+    },
+    {
+      "key": "line",
+      "name": "수비 라인",
+      "group": "oop",
+      "scale": "깊게 ↔ 매우 높게"
+    },
+    {
+      "key": "trap",
+      "name": "라인 행동",
+      "group": "oop",
+      "scale": "균형 ↔ 오프사이드 트랩"
+    },
+    {
+      "key": "stepUp",
+      "name": "라인 전진",
+      "group": "oop",
+      "scale": "버팀 ↔ 공이 나가면 바로 끌어올림"
+    },
+    {
+      "key": "markTight",
+      "name": "마킹 간격",
+      "group": "oop",
+      "scale": "공간 지키기 ↔ 사람에게 바짝"
+    },
+    {
+      "key": "press",
+      "name": "압박 빈도",
+      "group": "oop",
+      "scale": "덜 ↔ 더 자주"
+    },
+    {
+      "key": "tackle",
+      "name": "태클 강도",
+      "group": "oop",
+      "scale": "자제 ↔ 거칠게"
+    },
+    {
+      "key": "funnel",
+      "name": "압박 함정",
+      "group": "oop",
+      "scale": "중앙으로 몰기 ↔ 측면으로 몰기"
+    },
+    {
+      "key": "gkPress",
+      "name": "상대 GK 짧은 배급 막기",
+      "group": "oop",
+      "scale": "안 함 ↔ 전방 압박"
+    },
+    {
+      "key": "crossCont",
+      "name": "크로스 경합",
+      "group": "oop",
+      "scale": "자리 지킴 ↔ 적극 경합"
+    }
+  ]
+}

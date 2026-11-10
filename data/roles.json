@@ -1,0 +1,910 @@
+{
+  "_doc": "선수 역할. area=맡을 수 있는 위치 라벨(*=GK 제외 전부), mod=움직임·판단 보정(연속값), needs=핵심 능력치 가중치.",
+  "inPossession": {
+    "gk": {
+      "name": "골키퍼",
+      "area": [
+        "GK"
+      ],
+      "mod": {},
+      "needs": {
+        "refl": 1,
+        "hand": 1
+      },
+      "desc": "골문을 지키고 안전하게 배급한다."
+    },
+    "sweeperGK": {
+      "name": "스위퍼 키퍼",
+      "area": [
+        "GK"
+      ],
+      "mod": {
+        "gkOut": 1,
+        "gkShort": 0.6
+      },
+      "needs": {
+        "kick": 1,
+        "pace": 0.5,
+        "refl": 0.6
+      },
+      "desc": "라인이 높을 때 골문 밖으로 나와 뒷공간을 지운다."
+    },
+    "bpGK": {
+      "name": "볼 플레잉 키퍼",
+      "area": [
+        "GK"
+      ],
+      "mod": {
+        "gkShort": 1,
+        "gkOut": 0.3
+      },
+      "needs": {
+        "kick": 1,
+        "ctrl": 0.6
+      },
+      "desc": "짧은 패스로 빌드업의 첫 단추를 낀다."
+    },
+    "cb": {
+      "name": "센터백",
+      "area": [
+        "CB"
+      ],
+      "mod": {},
+      "needs": {
+        "tack": 1,
+        "head": 1
+      },
+      "desc": "자리를 지키며 막고 무난하게 연결한다."
+    },
+    "bpd": {
+      "name": "볼 플레잉 수비수",
+      "area": [
+        "CB"
+      ],
+      "mod": {
+        "passFwd": 0.5,
+        "longPass": 0.3
+      },
+      "needs": {
+        "pass": 1,
+        "ctrl": 0.6,
+        "tack": 0.6
+      },
+      "desc": "수비 라인에서 전진 패스와 긴 패스를 시도한다."
+    },
+    "noNonsense": {
+      "name": "안전 우선 수비수",
+      "area": [
+        "CB"
+      ],
+      "mod": {
+        "clear": 0.8,
+        "passFwd": -0.2
+      },
+      "needs": {
+        "tack": 1,
+        "head": 1
+      },
+      "desc": "위험하면 무조건 걷어낸다."
+    },
+    "libero": {
+      "name": "리베로",
+      "area": [
+        "CB"
+      ],
+      "mod": {
+        "fwd": 0.12,
+        "passFwd": 0.4,
+        "dribble": 0.2
+      },
+      "needs": {
+        "pass": 1,
+        "ctrl": 0.8,
+        "pace": 0.5
+      },
+      "desc": "공을 가지면 미드필드로 올라가 수를 늘린다."
+    },
+    "wideCB": {
+      "name": "와이드 센터백",
+      "area": [
+        "CB",
+        "LB",
+        "RB",
+        "LWB",
+        "RWB"
+      ],
+      "mod": {
+        "fwd": 0.05,
+        "wide": 0.04,
+        "cross": 0.2,
+        "dribble": 0.15
+      },
+      "needs": {
+        "tack": 0.8,
+        "pace": 0.6,
+        "pass": 0.5
+      },
+      "desc": "스리백 바깥에서 측면으로 전진해 오버랩을 돕는다."
+    },
+    "fb": {
+      "name": "풀백",
+      "area": [
+        "LB",
+        "RB",
+        "LWB",
+        "RWB"
+      ],
+      "mod": {},
+      "needs": {
+        "tack": 0.8,
+        "pace": 0.6
+      },
+      "desc": "공수 균형을 지키는 기본 풀백."
+    },
+    "fbAtk": {
+      "name": "공격형 풀백",
+      "area": [
+        "LB",
+        "RB",
+        "LWB",
+        "RWB"
+      ],
+      "mod": {
+        "fwd": 0.08,
+        "wide": 0.05,
+        "cross": 0.5
+      },
+      "needs": {
+        "pace": 1,
+        "cross": 1,
+        "stam": 0.6
+      },
+      "desc": "측면을 오르내리며 크로스를 올린다."
+    },
+    "completeWB": {
+      "name": "컴플리트 윙백",
+      "area": [
+        "LB",
+        "RB",
+        "LWB",
+        "RWB",
+        "LM",
+        "RM"
+      ],
+      "mod": {
+        "fwd": 0.12,
+        "wide": 0.06,
+        "cross": 0.6,
+        "dribble": 0.3
+      },
+      "needs": {
+        "pace": 1,
+        "stam": 1,
+        "cross": 0.8,
+        "drib": 0.6
+      },
+      "desc": "사실상 윙어처럼 끝까지 올라가 공격에 가담한다."
+    },
+    "invFb": {
+      "name": "인버티드 풀백",
+      "area": [
+        "LB",
+        "RB",
+        "LWB",
+        "RWB"
+      ],
+      "mod": {
+        "inside": 0.18,
+        "fwd": 0.03,
+        "passFwd": 0.2
+      },
+      "needs": {
+        "pass": 1,
+        "ctrl": 0.6
+      },
+      "desc": "공격 시 안쪽으로 좁혀 미드필더 역할을 한다."
+    },
+    "invWB": {
+      "name": "인버티드 윙백",
+      "area": [
+        "LB",
+        "RB",
+        "LWB",
+        "RWB"
+      ],
+      "mod": {
+        "inside": 0.14,
+        "fwd": 0.08,
+        "passFwd": 0.35
+      },
+      "needs": {
+        "pass": 1,
+        "ctrl": 0.8,
+        "stam": 0.5
+      },
+      "desc": "안쪽으로 들어오면서 높은 위치까지 전진한다."
+    },
+    "noNonsenseFB": {
+      "name": "안전 우선 풀백",
+      "area": [
+        "LB",
+        "RB",
+        "LWB",
+        "RWB"
+      ],
+      "mod": {
+        "clear": 0.6,
+        "fwd": -0.03
+      },
+      "needs": {
+        "tack": 1,
+        "head": 0.5
+      },
+      "desc": "오버랩보다 수비에 집중하고 걷어낸다."
+    },
+    "anchor": {
+      "name": "앵커",
+      "area": [
+        "DM",
+        "CM"
+      ],
+      "mod": {
+        "fwd": -0.06,
+        "hold": 1
+      },
+      "needs": {
+        "tack": 1,
+        "pass": 0.5
+      },
+      "desc": "수비 라인 앞을 지키는 붙박이."
+    },
+    "halfBack": {
+      "name": "하프백",
+      "area": [
+        "DM"
+      ],
+      "mod": {
+        "fwd": -0.11,
+        "hold": 1,
+        "passFwd": 0.2
+      },
+      "needs": {
+        "tack": 0.8,
+        "pass": 0.8
+      },
+      "desc": "빌드업 때 센터백 사이로 내려와 3백을 만든다."
+    },
+    "dlp": {
+      "name": "딥라잉 플레이메이커",
+      "area": [
+        "DM",
+        "CM"
+      ],
+      "mod": {
+        "fwd": -0.03,
+        "passFwd": 0.5,
+        "longPass": 0.5
+      },
+      "needs": {
+        "pass": 1,
+        "ctrl": 0.6
+      },
+      "desc": "깊은 위치에서 경기를 조율한다."
+    },
+    "regista": {
+      "name": "레지스타",
+      "area": [
+        "DM"
+      ],
+      "mod": {
+        "fwd": 0.02,
+        "passFwd": 0.7,
+        "longPass": 0.6,
+        "freedom": 0.3
+      },
+      "needs": {
+        "pass": 1,
+        "ctrl": 1
+      },
+      "desc": "자유롭게 움직이며 결정적인 긴 패스를 노린다."
+    },
+    "bwm": {
+      "name": "볼 위닝 미드필더",
+      "area": [
+        "DM",
+        "CM"
+      ],
+      "mod": {
+        "win": 0.5,
+        "fwd": -0.01
+      },
+      "needs": {
+        "tack": 1,
+        "stam": 0.8
+      },
+      "desc": "공을 가진 상대에게 달려들어 끊어낸다."
+    },
+    "volante": {
+      "name": "세군도 볼란치",
+      "area": [
+        "DM"
+      ],
+      "mod": {
+        "fwd": 0.08,
+        "runBox": 0.4,
+        "shoot": 0.3
+      },
+      "needs": {
+        "stam": 1,
+        "shoot": 0.6,
+        "tack": 0.5
+      },
+      "desc": "수비형 미드필더지만 박스로 늦게 침투한다."
+    },
+    "roamPM": {
+      "name": "로밍 플레이메이커",
+      "area": [
+        "DM",
+        "CM"
+      ],
+      "mod": {
+        "freedom": 0.5,
+        "passFwd": 0.4,
+        "dribble": 0.2,
+        "fwd": 0.03
+      },
+      "needs": {
+        "pass": 1,
+        "stam": 0.8,
+        "drib": 0.5
+      },
+      "desc": "경기장 곳곳을 누비며 공을 받아 연결한다."
+    },
+    "cm": {
+      "name": "중앙 미드필더",
+      "area": [
+        "CM",
+        "DM"
+      ],
+      "mod": {},
+      "needs": {
+        "pass": 0.8,
+        "tack": 0.5,
+        "stam": 0.5
+      },
+      "desc": "공수 모두 무난하게 소화한다."
+    },
+    "b2b": {
+      "name": "박스 투 박스",
+      "area": [
+        "CM",
+        "DM",
+        "AM"
+      ],
+      "mod": {
+        "fwd": 0.06,
+        "runBox": 0.4
+      },
+      "needs": {
+        "stam": 1,
+        "tack": 0.5,
+        "shoot": 0.4
+      },
+      "desc": "양쪽 박스를 오가며 공수에 가담한다."
+    },
+    "mezzala": {
+      "name": "메짤라",
+      "area": [
+        "CM"
+      ],
+      "mod": {
+        "fwd": 0.06,
+        "wide": 0.04,
+        "runBox": 0.3,
+        "dribble": 0.2
+      },
+      "needs": {
+        "drib": 0.8,
+        "pass": 0.6,
+        "pace": 0.5
+      },
+      "desc": "하프 스페이스로 벌어져 측면 공격을 돕는다."
+    },
+    "carrilero": {
+      "name": "카릴레로",
+      "area": [
+        "CM"
+      ],
+      "mod": {
+        "hold": 0.5,
+        "wide": 0.02,
+        "passFwd": -0.1
+      },
+      "needs": {
+        "stam": 1,
+        "tack": 0.6,
+        "pass": 0.5
+      },
+      "desc": "옆으로 오가며 측면 수비의 빈 곳을 메운다."
+    },
+    "am": {
+      "name": "공격형 미드필더",
+      "area": [
+        "AM"
+      ],
+      "mod": {
+        "fwd": 0.04,
+        "shoot": 0.2
+      },
+      "needs": {
+        "pass": 0.7,
+        "shoot": 0.6,
+        "drib": 0.5
+      },
+      "desc": "2선에서 패스와 슈팅을 섞는다."
+    },
+    "apm": {
+      "name": "공격형 플레이메이커",
+      "area": [
+        "AM",
+        "CM"
+      ],
+      "mod": {
+        "passFwd": 0.4,
+        "dribble": 0.2,
+        "freedom": 0.3
+      },
+      "needs": {
+        "pass": 1,
+        "ctrl": 0.8,
+        "drib": 0.5
+      },
+      "desc": "공격의 마지막 패스를 책임진다."
+    },
+    "shadow": {
+      "name": "섀도 스트라이커",
+      "area": [
+        "AM"
+      ],
+      "mod": {
+        "fwd": 0.1,
+        "runBox": 0.6,
+        "shoot": 0.4
+      },
+      "needs": {
+        "shoot": 1,
+        "pace": 0.5
+      },
+      "desc": "두 번째 스트라이커처럼 박스로 파고든다."
+    },
+    "enganche": {
+      "name": "엥간체",
+      "area": [
+        "AM"
+      ],
+      "mod": {
+        "hold": 1,
+        "passFwd": 0.6,
+        "fwd": -0.02,
+        "freedom": 0.4
+      },
+      "needs": {
+        "pass": 1,
+        "ctrl": 1
+      },
+      "desc": "한자리에 서서 공을 받아 찔러 준다."
+    },
+    "treq": {
+      "name": "트레콰르티스타",
+      "area": [
+        "AM",
+        "ST"
+      ],
+      "mod": {
+        "freedom": 0.8,
+        "dribble": 0.3,
+        "passFwd": 0.3,
+        "shoot": 0.2
+      },
+      "needs": {
+        "drib": 1,
+        "pass": 0.8,
+        "ctrl": 0.8
+      },
+      "desc": "수비 부담 없이 자유롭게 공격만 한다."
+    },
+    "wideMid": {
+      "name": "측면 미드필더",
+      "area": [
+        "LM",
+        "RM"
+      ],
+      "mod": {},
+      "needs": {
+        "stam": 0.8,
+        "cross": 0.6,
+        "pass": 0.5
+      },
+      "desc": "측면에서 공수를 함께 맡는다."
+    },
+    "winger": {
+      "name": "윙어",
+      "area": [
+        "LM",
+        "RM",
+        "LW",
+        "RW"
+      ],
+      "mod": {
+        "wide": 0.07,
+        "cross": 0.6,
+        "dribble": 0.3
+      },
+      "needs": {
+        "pace": 1,
+        "cross": 1,
+        "drib": 0.6
+      },
+      "desc": "터치라인을 타고 돌파해 크로스한다."
+    },
+    "invWinger": {
+      "name": "인버티드 윙어",
+      "area": [
+        "LM",
+        "RM",
+        "LW",
+        "RW"
+      ],
+      "mod": {
+        "inside": 0.1,
+        "cross": 0.3,
+        "passFwd": 0.3,
+        "dribble": 0.2
+      },
+      "needs": {
+        "drib": 0.8,
+        "pass": 0.6,
+        "cross": 0.6
+      },
+      "desc": "안쪽으로 파고들며 반대발 크로스와 패스를 노린다."
+    },
+    "insideFwd": {
+      "name": "인사이드 포워드",
+      "area": [
+        "LM",
+        "RM",
+        "LW",
+        "RW"
+      ],
+      "mod": {
+        "inside": 0.14,
+        "shoot": 0.5,
+        "dribble": 0.3,
+        "fwd": 0.04
+      },
+      "needs": {
+        "shoot": 1,
+        "drib": 1,
+        "pace": 0.6
+      },
+      "desc": "측면에서 중앙으로 파고들어 직접 슈팅한다."
+    },
+    "widePM": {
+      "name": "와이드 플레이메이커",
+      "area": [
+        "LM",
+        "RM",
+        "LW",
+        "RW"
+      ],
+      "mod": {
+        "inside": 0.12,
+        "passFwd": 0.5,
+        "fwd": -0.02
+      },
+      "needs": {
+        "pass": 1,
+        "ctrl": 0.8
+      },
+      "desc": "측면에서 안쪽으로 좁혀 경기를 풀어 준다."
+    },
+    "defWinger": {
+      "name": "수비형 윙어",
+      "area": [
+        "LM",
+        "RM",
+        "LW",
+        "RW"
+      ],
+      "mod": {
+        "fwd": -0.06,
+        "win": 0.3,
+        "cross": 0.3
+      },
+      "needs": {
+        "stam": 1,
+        "tack": 0.6,
+        "cross": 0.5
+      },
+      "desc": "성실히 내려와 수비하고 기회가 오면 크로스한다."
+    },
+    "raumdeuter": {
+      "name": "라움도이터",
+      "area": [
+        "LM",
+        "RM",
+        "LW",
+        "RW"
+      ],
+      "mod": {
+        "inside": 0.08,
+        "runBox": 0.6,
+        "runBehind": 0.4,
+        "shoot": 0.4,
+        "passFwd": -0.1
+      },
+      "needs": {
+        "shoot": 1,
+        "pace": 0.6
+      },
+      "desc": "공간을 찾아 박스 안으로 몰래 침투한다."
+    },
+    "wideTarget": {
+      "name": "와이드 타깃맨",
+      "area": [
+        "LM",
+        "RM",
+        "LW",
+        "RW"
+      ],
+      "mod": {
+        "head": 0.5,
+        "hold": 0.5
+      },
+      "needs": {
+        "head": 1,
+        "ctrl": 0.6
+      },
+      "desc": "측면에서 긴 공을 받아 지켜 준다."
+    },
+    "advFwd": {
+      "name": "어드밴스드 포워드",
+      "area": [
+        "ST"
+      ],
+      "mod": {
+        "runBehind": 0.6,
+        "fwd": 0.05,
+        "shoot": 0.2
+      },
+      "needs": {
+        "pace": 1,
+        "shoot": 1
+      },
+      "desc": "수비 라인 뒤로 계속 침투한다."
+    },
+    "target": {
+      "name": "타깃맨",
+      "area": [
+        "ST"
+      ],
+      "mod": {
+        "head": 0.6,
+        "hold": 1,
+        "fwd": -0.02
+      },
+      "needs": {
+        "head": 1,
+        "ctrl": 0.6
+      },
+      "desc": "긴 공을 받아 지키고 헤더로 연결한다."
+    },
+    "pressFwd": {
+      "name": "프레싱 포워드",
+      "area": [
+        "ST"
+      ],
+      "mod": {
+        "win": 0.5,
+        "fwd": 0.02
+      },
+      "needs": {
+        "stam": 1,
+        "pace": 0.6,
+        "tack": 0.4
+      },
+      "desc": "최전방에서 수비수를 끝없이 압박한다."
+    },
+    "complete": {
+      "name": "컴플리트 포워드",
+      "area": [
+        "ST"
+      ],
+      "mod": {
+        "shoot": 0.3,
+        "dribble": 0.2,
+        "passFwd": 0.2,
+        "head": 0.3
+      },
+      "needs": {
+        "shoot": 0.8,
+        "drib": 0.6,
+        "head": 0.6,
+        "pass": 0.5
+      },
+      "desc": "연결·돌파·마무리를 모두 한다."
+    },
+    "dlf": {
+      "name": "딥라잉 포워드",
+      "area": [
+        "ST"
+      ],
+      "mod": {
+        "fwd": -0.08,
+        "passFwd": 0.3,
+        "hold": 0.5
+      },
+      "needs": {
+        "pass": 0.8,
+        "ctrl": 0.8
+      },
+      "desc": "내려와 공을 받아 2선에 연결한다."
+    },
+    "false9": {
+      "name": "폴스 9",
+      "area": [
+        "ST"
+      ],
+      "mod": {
+        "fwd": -0.12,
+        "passFwd": 0.4,
+        "dribble": 0.2
+      },
+      "needs": {
+        "pass": 1,
+        "ctrl": 1,
+        "drib": 0.5
+      },
+      "desc": "미드필드까지 내려와 센터백을 끌어낸다."
+    },
+    "poacher": {
+      "name": "포처",
+      "area": [
+        "ST"
+      ],
+      "mod": {
+        "runBehind": 0.3,
+        "shoot": 0.5,
+        "fwd": 0.04,
+        "passFwd": -0.2
+      },
+      "needs": {
+        "shoot": 1
+      },
+      "desc": "박스 안에서 마무리에만 집중한다."
+    }
+  },
+  "outOfPossession": {
+    "gkStay": {
+      "name": "골문 사수",
+      "area": [
+        "GK"
+      ],
+      "mod": {},
+      "desc": "골라인을 지킨다."
+    },
+    "gkRush": {
+      "name": "적극 판단 키퍼",
+      "area": [
+        "GK"
+      ],
+      "mod": {
+        "gkOut": 0.6,
+        "claim": 1
+      },
+      "desc": "크로스와 침투 패스를 적극적으로 나와 처리한다."
+    },
+    "gkSweep": {
+      "name": "스위퍼 키퍼",
+      "area": [
+        "GK"
+      ],
+      "mod": {
+        "gkOut": 1,
+        "claim": 0.5
+      },
+      "desc": "높은 라인 뒤 공간을 골문 밖에서 지운다."
+    },
+    "hold": {
+      "name": "자리 지키기",
+      "area": [
+        "*"
+      ],
+      "mod": {},
+      "desc": "수비 포메이션 자리를 지킨다."
+    },
+    "presser": {
+      "name": "적극 압박",
+      "area": [
+        "*"
+      ],
+      "mod": {
+        "press": 1
+      },
+      "desc": "가까운 볼 보유자에게 바로 달려든다."
+    },
+    "marker": {
+      "name": "맨마킹",
+      "area": [
+        "*"
+      ],
+      "mod": {
+        "mark": 1
+      },
+      "desc": "가장 가까운 상대를 따라붙는다."
+    },
+    "cover": {
+      "name": "커버",
+      "area": [
+        "*"
+      ],
+      "mod": {
+        "deep": 0.05
+      },
+      "desc": "한 발 물러서서 뒷공간을 메운다."
+    },
+    "stopper": {
+      "name": "전진 차단",
+      "area": [
+        "*"
+      ],
+      "mod": {
+        "stepUp": 0.04,
+        "press": 0.4
+      },
+      "desc": "앞으로 나가 공을 받는 상대를 먼저 끊는다."
+    },
+    "trackBack": {
+      "name": "수비 가담",
+      "area": [
+        "*"
+      ],
+      "mod": {
+        "deep": 0.09
+      },
+      "desc": "공격수·윙어가 끝까지 내려와 수비를 돕는다."
+    },
+    "sweeper": {
+      "name": "스위퍼",
+      "area": [
+        "CB"
+      ],
+      "mod": {
+        "deep": 0.09
+      },
+      "desc": "수비 라인 뒤에서 남은 공간을 쓸어 담는다."
+    },
+    "showOut": {
+      "name": "측면으로 몰기",
+      "area": [
+        "*"
+      ],
+      "mod": {
+        "funnel": 0.6,
+        "press": 0.3
+      },
+      "desc": "안쪽을 막고 상대를 터치라인 쪽으로 몬다."
+    },
+    "showIn": {
+      "name": "중앙으로 몰기",
+      "area": [
+        "*"
+      ],
+      "mod": {
+        "funnel": -0.6,
+        "press": 0.3
+      },
+      "desc": "바깥을 막고 상대를 붐비는 중앙으로 몬다."
+    }
+  }
+}

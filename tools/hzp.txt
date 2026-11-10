@@ -1,0 +1,1 @@
+(()=>{const P=MGR_PRESETS.hurzeler;return {auto:false,cells:P.cells,cellsO:P.cellsO,style:P.style,params:{...STYLES[P.style],...P.params},rolesI:P.rolesI,rolesO:P.rolesO};})()

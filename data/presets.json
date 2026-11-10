@@ -1,0 +1,158 @@
+{
+  "_doc": "감독 전술 프리셋. cells=공격 시 [행,열], cellsO=수비 시. 행 1(우리 골 쪽)~11, 열 0(왼쪽)~8. 슬롯 순서 1 LB,2 LCB,3 RCB,4 RB,5 LDM,6 RDM,7 LM/LW,8 AM,9 RM/RW,10 ST. roles 배열 0번은 GK.",
+  "presets": {
+    "hurzeler": {
+      "name": "휘르첼러 (브라이튼 26/27)",
+      "desc": "4-2-3-1 기반. 공격 시 센터백이 벌리고 수비형 미드필더 하나가 사이로 내려 3백을 만들고, 왼쪽 풀백이 폭을 잡고 양 윙어는 하프스페이스로 좁힌다. 수비 시 10번이 올라가 투톱으로 맨투맨 하이 프레스.",
+      "style": "gegen",
+      "params": {
+        "direct": 0.25,
+        "tempo": 0.55,
+        "width": 0.7,
+        "risk": 0.55,
+        "waste": 0.15,
+        "freedom": 0.65,
+        "setPiece": 0.4,
+        "buildDirect": 0.1,
+        "gkLong": 0.15,
+        "gkSpeed": 0.45,
+        "runBehind": 0.55,
+        "spacePass": 0.6,
+        "dribble": 0.6,
+        "overlap": 0.65,
+        "side": 0.4,
+        "gkWide": 0.5,
+        "overlapSide": 0.3,
+        "underlap": 0.55,
+        "dribbleFinal": 0.6,
+        "crossEarly": 0.3,
+        "stepUp": 0.7,
+        "markTight": 0.85,
+        "patience": 0.65,
+        "longShot": 0.3,
+        "cross": 0.3,
+        "crossHigh": 0.3,
+        "atkTrans": 0.6,
+        "defTrans": 0.85,
+        "engage": 0.8,
+        "line": 0.75,
+        "trap": 0.55,
+        "press": 0.8,
+        "tackle": 0.55,
+        "funnel": 0.5,
+        "gkPress": 0.85,
+        "crossCont": 0.55
+      },
+      "cells": [
+        [
+          5,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          10,
+          4
+        ]
+      ],
+      "cellsO": [
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          5
+        ]
+      ],
+      "rolesI": [
+        "bpGK",
+        "fbAtk",
+        "bpd",
+        "bpd",
+        "invFb",
+        "halfBack",
+        "dlp",
+        "widePM",
+        "apm",
+        "insideFwd",
+        "complete"
+      ],
+      "rolesO": [
+        "gkSweep",
+        "marker",
+        "stopper",
+        "stopper",
+        "marker",
+        "marker",
+        "marker",
+        "marker",
+        "presser",
+        "marker",
+        "presser"
+      ]
+    }
+  }
+}
